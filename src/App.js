@@ -1,9 +1,15 @@
 import React from 'react';
+import Book from './components/Book';
 
 const App = () => {
   return (
     <div>
-      <h1>Hello Raact</h1>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './scss/App.scss'
-import App from './App'
+import './scss/index.scss'
+import BookList from './BookList'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BookList />
   </React.StrictMode>,
   document.getElementById('root')
 );

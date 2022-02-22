@@ -1,5 +1,9 @@
 import React from 'react'
 
-const Author = () => <h4>Amelia Hepworth</h4>
+const Author = () => {
+  return (
+    <h4>Amelia Hepworth</h4>
+  )
+}
 
 export default Author

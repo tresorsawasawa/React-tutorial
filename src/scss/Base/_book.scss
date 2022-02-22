@@ -1,0 +1,12 @@
+@import 'variables';
+
+.book {
+  background-color: $light-color;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  max-width: 370px;
+
+  & img {
+    max-width: 100%;
+  }
+}

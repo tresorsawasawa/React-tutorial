@@ -7,7 +7,7 @@ const ShortCircuit = () => {
   const [isError, setIsError] = useState(false);
 
   const firstValue = text || "hello world";
-  const secondValue = text && "hello world";
+  // const secondValue = text && "hello world";
 
   const errorStyling = {
     color: "red",

@@ -1,24 +1,49 @@
-import React, { useState, useReducer } from "react";
-import Modal from "./Modal";
-import { data } from "../../../data";
+import React, { useState, useReducer } from 'react';
+import Modal from './Modal';
+import { data } from '../../../data';
 // reducer function
 
-const reducer = (state, action) => {};
+const ADD_ITEM = 'ADD_ITEM';
+const NO_VALUE = 'NO_VALUE';
+
+const reducer = (state, action) => {
+  if (action.type === ADD_ITEM) {
+    const newPeople = [...state.people, action.payload];
+    return {
+      ...state,
+      people: newPeople,
+      isModalOpen: true,
+      modalContent: 'Item added',
+    };
+  }
+
+  if (action.type === NO_VALUE) {
+    return { ...state, isModalOpen: true, modalContent: 'Pleasse enter a value' };
+  }
+  // throw new Error('No Action Is Matching');
+};
 
 const defaultState = {
-  people: data,
+  people: [],
   isModalOpen: false,
-  modalContent: "Hello world",
+  modalContent: '',
 };
 
 const Index = () => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const [state, dispatch] = useReducer(reducer, defaultState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.trim()) {
+      const newItem = {
+        id: new Date().getTime().toString(),
+        name,
+      };
+      dispatch({ type: ADD_ITEM, payload: newItem });
+      setName('');
     } else {
+      dispatch({ type: NO_VALUE });
     }
   };
 
